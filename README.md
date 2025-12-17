@@ -218,3 +218,15 @@ CREATE TABLE IF NOT EXISTS funded_companies (
 
 A lightweight GitHub Actions workflow (`.github/workflows/run.yml`) keeps the system serverless: it checks out the repo on a schedule, sets up Python, installs dependencies, and runs `python main.py`. Secrets (LLM keys, Telegram token, Google credentials) are injected from GitHub Repository Secrets, so no credentials live in the workflow definition. Logs capture each stage’s timing, and because the pipeline is fully stateful, repeated runs stay inexpensive—GitHub only pays for new articles while the workflow itself remains container-free (no Docker required).
 
+## Extension Overview
+
+This fork extends the base lead scoring agent to identify and prioritize
+toxicology and preclinical safety decision-makers relevant to 3D in-vitro
+model platforms.
+
+Key Extensions:
+- Domain-specific role and keyword filtering
+- PubMed-based researcher identification
+- Transparent rule-based lead scoring
+- Reproducible CSV output
+
